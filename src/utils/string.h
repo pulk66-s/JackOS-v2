@@ -7,5 +7,7 @@
  */
 
     #include "string/strlen.h"
+    #include "string/itoa.h"
+    #include "string/revstr.h"
 
 #endif
