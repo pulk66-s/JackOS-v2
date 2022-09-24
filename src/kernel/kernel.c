@@ -18,5 +18,6 @@ void terminal_initialize() {
 
 void kernel_main() {
     terminal_initialize();
+    strlen("HelloWorld");
     while(1) {}
 }

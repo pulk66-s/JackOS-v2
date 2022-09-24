@@ -1,6 +1,8 @@
 BOOT			= ./src/boot
 BIN				= ./bin
 BUILD			= ./build
+UTILS			= ./src/utils
+STRING_LIB		= $(UTILS)/string
 KERNEL			= ./src/kernel
 LINKER			= ./src/linker.ld
 KERNEL_BIN		= $(BIN)/kernel.bin
@@ -13,8 +15,11 @@ BOOT_BIN		= $(BIN)/boot.bin
 BOOT_FLAGS		= -f bin
 
 CC				= /home/me-an-intellectuel/Bureau/LD_ELF_I386/zip/i686-elf-tools-linux/bin/i686-elf-gcc
-CFLAGS			= -g -ffreestanding -falign-jumps -falign-functions -falign-labels -falign-loops -fstrength-reduce -fomit-frame-pointer -finline-functions -Wno-unused-function -fno-builtin -Werror -Wno-unused-label -Wno-cpp -Wno-unused-parameter -nostdlib -nostartfiles -nodefaultlibs -Wall -O0 -Iinc
-SRC				= $(KERNEL)/kernel.c
+INCLUDES		= -I./src -I$(UTILS)
+CFLAGS			= -g -ffreestanding -falign-jumps -falign-functions -falign-labels -falign-loops -fstrength-reduce -fomit-frame-pointer -finline-functions -Wno-unused-function -fno-builtin -Werror -Wno-unused-label -Wno-cpp -Wno-unused-parameter -nostdlib -nostartfiles -nodefaultlibs -Wall -O0 $(INCLUDES)
+SRC				= $(KERNEL)/kernel.c \
+				$(STRING_LIB)/strlen.c \
+
 OBJ				= $(SRC:.c=.o)
 
 
