@@ -2,7 +2,11 @@ BOOT			= ./src/boot
 BIN				= ./bin
 BUILD			= ./build
 UTILS			= ./src/utils
+GDT				= ./src/gdt
+ERROR_LIB		= $(UTILS)/error
 STRING_LIB		= $(UTILS)/string
+VGA_LIB			= $(UTILS)/VGA
+MEM_LIB			= $(UTILS)/memory
 KERNEL			= ./src/kernel
 LINKER			= ./src/linker.ld
 KERNEL_BIN		= $(BIN)/kernel.bin
@@ -15,16 +19,26 @@ BOOT_BIN		= $(BIN)/boot.bin
 BOOT_FLAGS		= -f bin
 
 CC				= /home/me-an-intellectuel/Bureau/LD_ELF_I386/zip/i686-elf-tools-linux/bin/i686-elf-gcc
-INCLUDES		= -I./src -I$(UTILS)
+INCLUDES		= -I./src -I$(UTILS) -I$(GDT)
 CFLAGS			= -g -ffreestanding -falign-jumps -falign-functions -falign-labels -falign-loops -fstrength-reduce -fomit-frame-pointer -finline-functions -Wno-unused-function -fno-builtin -Werror -Wno-unused-label -Wno-cpp -Wno-unused-parameter -nostdlib -nostartfiles -nodefaultlibs -Wall -O0 $(INCLUDES)
 SRC				= $(KERNEL)/kernel.c \
+				$(GDT)/gdt.c \
+				$(GDT)/init.c \
+				$(ERROR_LIB)/panic.c \
+				$(VGA_LIB)/print.c \
+				$(VGA_LIB)/config.c \
 				$(STRING_LIB)/strlen.c \
+				$(STRING_LIB)/itoa.c \
+				$(STRING_LIB)/revstr.c \
+				$(MEM_LIB)/memset.c \
 
 OBJ				= $(SRC:.c=.o)
 
 
 ASM_FLAGS		= -f elf -g
-ASM_SRC			= $(KERNEL)/entry_point.asm
+ASM_SRC			= $(KERNEL)/entry_point.asm \
+				$(GDT)/lgdt.asm \
+
 ASM_OBJ			= $(ASM_SRC:.asm=.o)
 KERNEL_FILES	= $(ASM_OBJ) \
 				$(OBJ)

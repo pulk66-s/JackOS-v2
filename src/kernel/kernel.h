@@ -1,9 +1,9 @@
 #ifndef __JOS_KERNEL_H__
     #define __JOS_KERNEL_H__
 
-    #include <stddef.h>
+    #include "VGA.h"
+    #include "gdt.h"
     #include <stdint.h>
-    #include "string.h"
 
     #define VGA_WIDTH 80
     #define VGA_HEIGHT 25
