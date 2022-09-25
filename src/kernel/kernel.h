@@ -2,8 +2,9 @@
     #define __JOS_KERNEL_H__
 
     #include "VGA.h"
-    #include "gdt.h"
-    #include "heap.h"
+    #include "gdt/gdt.h"
+    #include "heap/heap.h"
+    #include "memory.h"
     #include <stdint.h>
 
     #define VGA_WIDTH 80

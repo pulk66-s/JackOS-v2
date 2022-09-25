@@ -20,19 +20,25 @@ BOOT_BIN		= $(BIN)/boot.bin
 BOOT_FLAGS		= -f bin
 
 CC				= /home/me-an-intellectuel/Bureau/LD_ELF_I386/zip/i686-elf-tools-linux/bin/i686-elf-gcc
-INCLUDES		= -I./src -I$(UTILS) -I$(GDT) -I$(HEAP)
+INCLUDES		= -I./src -I$(UTILS)
 CFLAGS			= -g -ffreestanding -falign-jumps -falign-functions -falign-labels -falign-loops -fstrength-reduce -fomit-frame-pointer -finline-functions -Wno-unused-function -fno-builtin -Werror -Wno-unused-label -Wno-cpp -Wno-unused-parameter -nostdlib -nostartfiles -nodefaultlibs -Wall -O0 $(INCLUDES)
 SRC				= $(KERNEL)/kernel.c \
 				$(GDT)/gdt.c \
 				$(GDT)/init.c \
 				$(HEAP)/heap.c \
+				$(HEAP)/alloc.c \
+				$(HEAP)/free.c \
 				$(ERROR_LIB)/panic.c \
 				$(VGA_LIB)/print.c \
 				$(VGA_LIB)/config.c \
 				$(STRING_LIB)/strlen.c \
 				$(STRING_LIB)/itoa.c \
 				$(STRING_LIB)/revstr.c \
+				$(STRING_LIB)/strcat.c \
+				$(STRING_LIB)/strdup.c \
 				$(MEM_LIB)/memset.c \
+				$(MEM_LIB)/malloc.c \
+				$(MEM_LIB)/free.c \
 
 OBJ				= $(SRC:.c=.o)
 

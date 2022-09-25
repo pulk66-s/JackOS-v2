@@ -6,5 +6,7 @@
  */
 
     #include "memory/memset.h"
+    #include "memory/malloc.h"
+    #include "memory/free.h"
 
 #endif

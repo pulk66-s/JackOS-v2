@@ -1,12 +1,11 @@
 #include "heap.h"
 
-static heap_t heap;
-static heap_table_t heap_table;
+heap_t _heap;
 
 static void init_heap_struct()
 {
-    memset(&heap, 0, sizeof(heap_t));
-    heap.saddr = (void *)HEAP_ADDR;
+    memset(&_heap, 0, sizeof(heap_t));
+    _heap.saddr = (void *)HEAP_ADDR;
 }
 
 /**
@@ -15,11 +14,15 @@ static void init_heap_struct()
  */
 static void init_heap_table()
 {
+    heap_table_t heap_table;
+
     memset(&heap_table, 0, sizeof(heap_table_t));
     heap_table.entries = (void *)HEAP_ADDR;
     heap_table.total_block_size = HEAP_BLOCK_COUNT;
-    heap.table = &heap_table;
-    memset(heap.table->entries, HEAP_EMPTY_FLAG, HEAP_SIZE);
+    _heap.table = &heap_table;
+    memset(_heap.table->entries, HEAP_FREE_FLAG, HEAP_SIZE);
+    for (int i = 0; i < HEAP_BLOCK_COUNT; i++)
+        _heap.table->entries[i] = HEAP_FREE_FLAG;
 }
 
 /**
@@ -40,7 +43,7 @@ static int check_align_size(void *ptr)
  */
 static void checking_alignment()
 {
-    void *saddr = heap.saddr;
+    void *saddr = _heap.saddr;
     void *eaddr = (void *)((uint32_t)saddr + HEAP_SIZE);
 
     if (!check_align_size(saddr) || !check_align_size(eaddr)) {

@@ -9,5 +9,7 @@
     #include "string/strlen.h"
     #include "string/itoa.h"
     #include "string/revstr.h"
+    #include "string/strcat.h"
+    #include "string/strdup.h"
 
 #endif
