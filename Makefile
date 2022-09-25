@@ -42,7 +42,6 @@ SRC				= $(KERNEL)/kernel.c \
 
 OBJ				= $(SRC:.c=.o)
 
-
 ASM_FLAGS		= -f elf -g
 ASM_SRC			= $(KERNEL)/entry_point.asm \
 				$(GDT)/lgdt.asm \
@@ -55,8 +54,8 @@ LD				= /home/me-an-intellectuel/Bureau/LD_ELF_I386/zip/i686-elf-tools-linux/bin
 LDFLAGS			= -g -relocatable
 
 all: boot_bin kernel_bin
-	dd if=./bin/boot.bin >> $(OS_BIN)
-	dd if=./bin/kernel.bin >> $(OS_BIN)
+	dd if=$(BOOT_BIN) 					>> $(OS_BIN)
+	dd if=$(KERNEL_BIN) 				>> $(OS_BIN)
 	dd if=/dev/zero bs=1048576 count=16 >> $(OS_BIN)
 
 qemu: all
