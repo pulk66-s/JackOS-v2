@@ -20,6 +20,8 @@ void kernel_main() {
     terminal_initialize();
     load_gdt();
     heap_init();
+    char *str = malloc(4100);
+    free(str);
     printf("Hello, world! %d, je suis un grand fan de %s Halliday et son single %c.", 0x0F, 0, 0, 321, "Johny", 'C');
     while(1) {}
 }
