@@ -19,6 +19,7 @@ void terminal_initialize() {
 void kernel_main() {
     terminal_initialize();
     load_gdt();
+    heap_init();
     printf("Hello, world! %d, je suis un grand fan de %s Halliday et son single %c.", 0x0F, 0, 0, 321, "Johny", 'C');
     while(1) {}
 }

@@ -3,6 +3,7 @@
 
     #include "VGA.h"
     #include "gdt.h"
+    #include "heap.h"
     #include <stdint.h>
 
     #define VGA_WIDTH 80
