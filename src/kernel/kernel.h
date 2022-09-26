@@ -6,15 +6,6 @@
     #include "heap/heap.h"
     #include "memory.h"
     #include "fs/fs.h"
-    #include <stdint.h>
-
-    #define VGA_WIDTH 80
-    #define VGA_HEIGHT 25
-
-/**
- * @brief VGA Memory buffer (OxB8000)
- */
-uint16_t *video_mem = (uint16_t*)(0xB8000);
 
 /**
  * @brief Entry point of the kernel,

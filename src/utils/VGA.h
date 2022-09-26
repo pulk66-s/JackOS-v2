@@ -3,5 +3,6 @@
 
     #include "VGA/config.h"
     #include "VGA/print.h"
+    #include "VGA/clear.h"
 
 #endif

@@ -34,6 +34,7 @@ SRC				= $(KERNEL)/kernel.c \
 				$(ERROR_LIB)/panic.c \
 				$(VGA_LIB)/print.c \
 				$(VGA_LIB)/config.c \
+				$(VGA_LIB)/clear.c \
 				$(STRING_LIB)/strlen.c \
 				$(STRING_LIB)/itoa.c \
 				$(STRING_LIB)/revstr.c \
