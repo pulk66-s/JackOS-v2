@@ -5,6 +5,7 @@
     #include "gdt/gdt.h"
     #include "heap/heap.h"
     #include "memory.h"
+    #include "fs/fs.h"
     #include <stdint.h>
 
     #define VGA_WIDTH 80

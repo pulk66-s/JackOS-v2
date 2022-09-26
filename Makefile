@@ -4,6 +4,7 @@ BUILD			= ./build
 UTILS			= ./src/utils
 GDT				= ./src/gdt
 HEAP			= ./src/heap
+FS				= ./src/fs
 ERROR_LIB		= $(UTILS)/error
 STRING_LIB		= $(UTILS)/string
 VGA_LIB			= $(UTILS)/VGA
@@ -28,6 +29,8 @@ SRC				= $(KERNEL)/kernel.c \
 				$(HEAP)/heap.c \
 				$(HEAP)/alloc.c \
 				$(HEAP)/free.c \
+				$(FS)/init.c \
+				$(FS)/info.c \
 				$(ERROR_LIB)/panic.c \
 				$(VGA_LIB)/print.c \
 				$(VGA_LIB)/config.c \
