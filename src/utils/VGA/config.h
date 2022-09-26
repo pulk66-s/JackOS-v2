@@ -1,7 +1,7 @@
 #ifndef __JOS_UTILS_VIDEO_MEMORY_CONFIG_H__
     #define __JOS_UTILS_VIDEO_MEMORY_CONFIG_H__
 
-    #include <stdint.h>
+    #include "stddef.h"
 
     #define VGA_ADDRESS 0xB8000
     #define VGA_WIDTH 80

@@ -1,7 +1,7 @@
 #ifndef __JOS_UTILS_STRING_STRCAT_H__
     #define __JOS_UTILS_STRING_STRCAT_H__
 
-    #include <stddef.h>
+    #include "stddef.h"
 
 /**
  * @brief concat the string in src into dest string, the dest pointer must have

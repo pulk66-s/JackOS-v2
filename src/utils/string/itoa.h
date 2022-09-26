@@ -1,7 +1,7 @@
 #ifndef __JOS_UTILS_STRING_ITOA_H__
     #define __JOS_UTILS_STRING_ITOA_H__
 
-    #include <stdint.h>
+    #include "stddef.h"
 
     #include "string/revstr.h"
 

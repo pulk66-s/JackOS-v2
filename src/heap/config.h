@@ -1,8 +1,8 @@
 #ifndef __JOS_HEAP_CONFIG_H__
     #define __JOS_HEAP_CONFIG_H__
 
-    #include <stdint.h>
-    #include <stddef.h>
+    #include "stddef.h"
+    #include "stddef.h"
 
 /**
  * @brief this is the heap management file, it contains the heap structure and

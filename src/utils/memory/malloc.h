@@ -2,7 +2,7 @@
     #define __JOS_UTILS_MEMORY_MALLOC_H__
 
     #include "heap/heap.h"
-    #include <stddef.h>
+    #include "stddef.h"
 
 /**
  * @brief Allocates a block of memory in the heap

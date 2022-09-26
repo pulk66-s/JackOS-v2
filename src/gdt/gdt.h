@@ -1,7 +1,7 @@
 #ifndef __JOS_GDT_GDT_H__
     #define __JOS_GDT_GDT_H__
 
-    #include <stdint.h>
+    #include "stddef.h"
     #include "error.h"
     #include "config.h"
     #include "init.h"

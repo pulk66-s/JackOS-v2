@@ -3,7 +3,7 @@
 
     #include "heap/config.h"
     #include "VGA.h"
-    #include <stdint.h>
+    #include "stddef.h"
 
 /**
  * @brief heap pointer free, it's used to free the space when not used anymore

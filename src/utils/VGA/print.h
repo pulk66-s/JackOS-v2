@@ -1,7 +1,7 @@
 #ifndef __JOS_UTILS_VIDEO_MEMORY_PRITNT_H__
     #define __JOS_UTILS_VIDEO_MEMORY_PRITNT_H__
 
-    #include <stdint.h>
+    #include "stddef.h"
     #include <stdarg.h>
     #include "VGA/config.h"
     #include "string.h"

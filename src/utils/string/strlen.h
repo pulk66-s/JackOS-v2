@@ -1,7 +1,7 @@
 #ifndef __JOS_UTILS_STRING_STRLEN_H__
     #define __JOS_UTILS_STRING_STRLEN_H__
 
-    #include <stddef.h>
+    #include "stddef.h"
 
 /**
  * @brief This function returns the length of a string

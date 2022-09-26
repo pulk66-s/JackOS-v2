@@ -1,7 +1,7 @@
 #ifndef __JOS_FS_CONFIG_H__
     #define __JOS_FS_CONFIG_H__
 
-    #include <stdint.h>
+    #include "stddef.h"
 
     #define FS_MAX_FILE_NAME_LEN 256
     #define FS_MAX_PATH_LEN 2048
