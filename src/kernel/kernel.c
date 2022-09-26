@@ -16,12 +16,20 @@ void terminal_initialize() {
     }
 }
 
-void kernel_main() {
+/**
+ * @brief all our systems must be initialized here
+ */
+static void kernel_init()
+{
     terminal_initialize();
     load_gdt();
     heap_init();
     fs_init();
+}
+
+void kernel_main() {
+    kernel_init();
     printf("Current path: %s", 0x0F, 0, 13, fs_get_current_path());
     printf("Hello, world! %d, je suis un grand fan de %s Halliday et son single %c.", 0x0F, 0, 0, 321, "Johny", 'C');
-    while(1) {}
+    for (;;);
 }
