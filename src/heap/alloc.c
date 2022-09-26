@@ -62,7 +62,6 @@ void *heap_alloc(size_t size)
     size_t block_count = aligned_size / HEAP_BLOCK_SIZE;
     heap_table_t *table = _heap.table;
     size_t block_free_index = get_block_free_index(table, block_count);
-    size_t test_y = 10;
 
     for (size_t i = 0; i < block_count; i++) {
         uint8_t flag = HEAP_USED_FLAG;
