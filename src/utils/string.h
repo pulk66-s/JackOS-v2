@@ -11,5 +11,7 @@
     #include "string/revstr.h"
     #include "string/strcat.h"
     #include "string/strdup.h"
+    #include "string/split.h"
+    #include "string/strcmp.h"
 
 #endif

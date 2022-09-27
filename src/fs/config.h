@@ -3,8 +3,9 @@
 
     #include "stddef.h"
 
-    #define FS_MAX_FILE_NAME_LEN 256
-    #define FS_MAX_PATH_LEN 2048
+    #define FS_MAX_FILE_NAME_LEN    256
+    #define FS_MAX_PATH_LEN         2048
+    #define FS_MAX_CHILDREN         256
 
 // FS flags
 
@@ -16,10 +17,11 @@
  */
 typedef struct file_s {
     char name[FS_MAX_FILE_NAME_LEN];
-    uint8_t flag;
+    uint8_t flags;
     uint32_t size;
     char abs_path[FS_MAX_PATH_LEN];
-    struct file_s **children;
+    struct file_s *children[FS_MAX_CHILDREN];
+    struct file_s *parent;
 } file_t;
 
 /**

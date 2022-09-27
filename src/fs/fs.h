@@ -8,5 +8,8 @@
 
     #include "fs/init.h"
     #include "fs/info.h"
+    #include "fs/create.h"
+    #include "fs/get.h"
+    #include "fs/mv.h"
 
 #endif

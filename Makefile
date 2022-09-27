@@ -32,6 +32,9 @@ SRC				= $(KERNEL)/kernel.c \
 				$(HEAP)/free.c \
 				$(FS)/init.c \
 				$(FS)/info.c \
+				$(FS)/create.c \
+				$(FS)/mv.c \
+				$(FS)/get.c \
 				$(ERROR_LIB)/panic.c \
 				$(VGA_LIB)/print.c \
 				$(VGA_LIB)/config.c \
@@ -41,6 +44,8 @@ SRC				= $(KERNEL)/kernel.c \
 				$(STRING_LIB)/revstr.c \
 				$(STRING_LIB)/strcat.c \
 				$(STRING_LIB)/strdup.c \
+				$(STRING_LIB)/split.c \
+				$(STRING_LIB)/strcmp.c \
 				$(MEM_LIB)/memset.c \
 				$(MEM_LIB)/malloc.c \
 				$(MEM_LIB)/free.c \

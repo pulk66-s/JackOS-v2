@@ -8,9 +8,9 @@ static file_t init_root()
 
     strcat(root.name, "/");
     strcat(root.abs_path, "/");
-    root.flag = FS_FLAG_DIRECTORY;
+    memset(root.children, 0, sizeof(root.children));
+    root.flags = FS_FLAG_DIRECTORY;
     root.size = 0;
-    root.children = NULL;
     return (root);
 }
 
