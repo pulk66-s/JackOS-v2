@@ -1,6 +1,7 @@
 #include "heap.h"
 
 heap_t _heap;
+static heap_table_t _heap_table;
 
 static void init_heap_struct()
 {
@@ -14,13 +15,9 @@ static void init_heap_struct()
  */
 static void init_heap_table()
 {
-    heap_table_t heap_table;
-
-    memset(&heap_table, 0, sizeof(heap_table_t));
-    heap_table.entries = (void *)HEAP_ADDR;
-    heap_table.total_block_size = HEAP_BLOCK_COUNT;
-    _heap.table = &heap_table;
-    memset(_heap.table->entries, HEAP_FREE_FLAG, HEAP_SIZE);
+    _heap_table.entries = (void *)HEAP_ADDR;
+    _heap_table.total_block_size = HEAP_BLOCK_COUNT;
+    _heap.table = &_heap_table;
     for (int i = 0; i < HEAP_BLOCK_COUNT; i++)
         _heap.table->entries[i] = HEAP_FREE_FLAG;
 }
