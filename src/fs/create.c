@@ -16,6 +16,7 @@ static file_t *create_default_file(const file_t *curr, const char *file, uint8_t
 
     memset(new_file, 0, sizeof(file_t));
     memset(new_file->children, 0, sizeof(new_file->children));
+    memset(new_file->data, 0, sizeof(new_file->data));
     strcat(new_file->name, file);
     new_file->flags = flags;
     new_file->size = 0;

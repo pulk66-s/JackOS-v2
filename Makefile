@@ -35,6 +35,8 @@ SRC				= $(KERNEL)/kernel.c \
 				$(FS)/create.c \
 				$(FS)/mv.c \
 				$(FS)/get.c \
+				$(FS)/write.c \
+				$(FS)/read.c \
 				$(ERROR_LIB)/panic.c \
 				$(VGA_LIB)/print.c \
 				$(VGA_LIB)/config.c \

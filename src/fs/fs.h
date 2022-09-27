@@ -11,5 +11,7 @@
     #include "fs/create.h"
     #include "fs/get.h"
     #include "fs/mv.h"
+    #include "fs/write.h"
+    #include "fs/read.h"
 
 #endif
